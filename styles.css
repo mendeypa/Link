@@ -22,6 +22,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 🔧 Fix mobile horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure all sections fit screen width */
+section, div, img {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Layout container */
 .container {
   width: 90%;
@@ -361,4 +373,5 @@ body.light footer {
 .icon {
   font-size: 1.8rem;
   margin-bottom: 0.8rem;
+
 }

@@ -43,7 +43,16 @@ section, div, img {
 
 /* Header */
 header {
-  padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #071d66, #04124a);
+    color: #fff;
+    text-align: center;
+    padding: 16px 8px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 .header-inner {
   display: flex;
@@ -332,7 +341,7 @@ body.light footer {
 }
 
 .egbe img {
-  height: 50%;
+  height: 30%;
 }
 
 .contain {
@@ -375,3 +384,4 @@ body.light footer {
   margin-bottom: 0.8rem;
 
 }
+

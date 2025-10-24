@@ -340,9 +340,9 @@ body.light footer {
   border-top-color: rgba(0, 0, 0, 0.1);
 }
 
-.egbe img {
+/* .egbe img {
   height: 30%;
-}
+} */
 
 .contain {
 
@@ -384,4 +384,5 @@ body.light footer {
   margin-bottom: 0.8rem;
 
 }
+
 
